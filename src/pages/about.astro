@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="A propos | David Attipoupou" description="Portfolio">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="A propos de moi"
+				tagline="Passionné par le développement web et la technologie réseau, je m'efforce de créer des solutions innovantes qui répondent aux besoins des utilisateurs tout en assurant la sécurité et l'efficacité des systèmes."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/photo_profil.jpg"
+					alt="David Attipoupou travaillant sur un projet de développement"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						Ma passion pour la technologie m'a conduit à explorer le monde du développement web et des réseaux informatiques.
+					</p>
+					<p>
+						Avec une expérience significative acquise lors de mon stage chez Olfa Plexus Technologies,
+						j'ai développé une solide base en développement de solutions web et en gestion de l'infrastructure IT, 
+						me permettant de contribuer efficacement à des projets innovants.
+					</p>
+					
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Formations</h2>
+				<div class="content">
+					<p>Actuellement en préparation d'un Bachelor en informatique à l'ESGI (2023-2025), je nourris une grande passion pour les domaines suivants: le développement web et les systèmes réseaux.</p>
+					<p>J'ai étudié pendant deux ans en Science de la Terre à l'Université du Mans (2019-2021), où j'ai développé mes compétences analytiques et ma capacité à aborder des problématiques complexes.</p>
+					<p>Ma formation académique a débuté par une année d'études en Systèmes et Réseaux informatiques au Togo (2018-2019), posant les fondations de mes connaissances en informatique et en réseautique.</p>
+
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Compétences</h2>
+				<div class="content">
+					<p>Les cours intensifs suivis à l'école et mes projets personnels m'ont permis de développer une solide base de compétences techniques, notamment :</p>
+						<ul>
+							<li><strong>Développement Web :</strong> Maîtrise de HTML5, CSS3, JavaScript, PHP, C, et Python.</li>
+							<li><strong>Frameworks :</strong> Expérience avec Laravel, React, et Vue.js pour le développement frontend et backend.</li>
+							<li><strong>Gestion de bases de données :</strong> Aptitudes en MySQL et PostgreSQL.</li>
+							<li><strong>Conception d’API :</strong> Capacité à créer des API robustes pour faciliter la communication entre différentes parties d'une application web.</li>
+							<li><strong>Utilisation d'outils de versioning :</strong> Compétence avancée avec Git pour le contrôle de version et la collaboration en équipe.</li>
+							<li><strong>Infrastructure IT et Réseautique :</strong> Configuration et gestion de Windows Server, VMware, GLPI, Linux (Debian/Ubuntu), réseaux LAN/WAN, VPN, et utilisation d'outils comme Wireshark et Cisco.</li>
+							<li><strong>Cloud Computing :</strong> Connaissance des services AWS, Azure, et Google Cloud.</li>
+							<li><strong>Protocoles réseau :</strong> Compréhension approfondie des standards DHCP/DNS et IPv4/IPv6.</li>
+						</ul>
+        			<p>Cette polyvalence me permet d'aborder les projets informatiques sous différents angles, garantissant des solutions complètes et performantes.</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
